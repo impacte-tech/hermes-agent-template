@@ -13,7 +13,7 @@ RUN apt-get update && \
 # Deleting web/ afterwards makes hermes's internal _build_web_ui skip the
 # rebuild step (it early-returns when package.json is absent), so container
 # startup is fast and no runtime npm dependency is needed.
-RUN git clone --depth 1 https://github.com/NousResearch/hermes-agent.git /opt/hermes-agent && \
+RUN git clone --depth 1 https://github.com/impacte-tech/hermes-agent /opt/hermes-agent && \
     cd /opt/hermes-agent && \
     uv pip install --system --no-cache -e ".[all]" && \
     cd /opt/hermes-agent/web && \
